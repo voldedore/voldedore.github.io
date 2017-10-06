@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn &middot; So you are in voldedore's blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Maitree|Montserrat" rel="stylesheet">
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">So you are in voldedore's blog</h2>
+        </a>
+        <ul>
+          <li><a href="http://localhost:4000/about">About</a></li>
+          <li><a href="/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    
+      <span>Published on&nbsp;</span><time datetime="2017-09-28 00:00:00 +0700">September 28, 2017</time>
+    
+  </div>
+
+  <h1 class="post-title">TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn</h1>
+  <div class="post-line"></div>
+
+  <p><em>Bài này đuợc dịch từ bài gốc ở  <a href="https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/">đây</a>, có chỉnh sửa một số chỗ.</em></p>
+
+<p>Hy vọng bài này sẽ giúp anh em chú ý hơn trong việc deploy các source code với VCM. Bởi vì thực tế là có không ít website đang dính lỗi này. (Google 5s là ra á mà). Ví dụ trang: http://deploy-ngay-tho.vn/ (tên nhân vật chính đã được thay đổi).</p>
+
+<hr />
+<h3 id="chuyện-bắt-đầu-từ-">Chuyện bắt đầu từ …</h3>
+
+<p>Sau một thời gian dài thức khuya code với nhau, quản lý code bằng git, commit push pull đủ thứ, anh Ngây và chị Thơ đã tìm hiểu và đến với nhau, sau đó publish trang <em>deploy ngây thơ</em> lên mạng. Mọi chuyện sẽ chẳng có gì lớn lao cho tới một ngày, có người phát hiện ra là cặp đôi ngây thơ bật directory-listing trên nginx và không block access vào folder .git</p>
+
+<p>Đầu tiên là vô tình một cách có chủ ý, truy cập <a href="http://deploy-ngay-tho.vn/.git/">http://deploy-ngay-tho.vn/.git/</a></p>
+
+<p>Pemm, nhờ directories listing mà anh em sẽ thấy</p>
+
+<p><img src="/assets/images/git-directorylisting.png" alt="sfsdg" /></p>
+
+<p>Sau đây là một số cách để anh chị ngây thơ bị chôm source khi để không .git cho thiên hạ vào xem.</p>
+
+<h3 id="cách-thứ-nhứt-download-hết-những-gì-anh-em-có-thể-thấy-đuợc-trên-cái-listing-đó">Cách thứ nhứt: Download hết những gì anh em có thể thấy đuợc trên cái listing đó.</h3>
+
+<p><code class="highlighter-rouge">wget --mirror -I .git http://deploy-ngay-tho.vn/.git/</code></p>
+
+<p>Sau khi download xong, nếu anh em xài một số shells như zsh… <code class="highlighter-rouge">cd</code> vào đó sẽ thấy (<code class="highlighter-rouge">master</code>/<code class="highlighter-rouge">developer</code>/<code class="highlighter-rouge">dev</code>…) tức branch name của git repo.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~/deploy-ngay-tho.vn &gt; master &gt;
+‣ ll
+total 6K
+drwxr-xr-x.  6  4.0K Sep 29 23:12 .
+drwxr-xr-x.  7  4.0K Sep 29 22:16 ..
+drwxr-xr-x.  8  4.0K Sep 29 23:48 .git
+</code></pre>
+</div>
+
+<p>Thử <code class="highlighter-rouge">git status</code>, ta sẽ có được các file bị thiếu (giống như deleted), vì ta mới leech được .git trong cái thư mục trống rỗng mà.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~/deploy-ngay-tho.vn &gt; master &gt;
+‣ git status | head -n 10
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add/rm &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+        deleted:       .buildpath
+        deleted:       .gitignore
+        deleted:       .htaccess
+        deleted:       .project
+</code></pre>
+</div>
+
+<p>Thử revert lại bằng <code class="highlighter-rouge">git checkout -- .</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~/deploy-ngay-tho.vn &gt; master &gt;
+‣ ll
+total 216K
+drwxr-xr-x.  6   4.0K Sep 29 23:12 .
+drwxr-xr-x.  7   4.0K Sep 29 22:16 ..
+-rw-r--r--.  1  1.2K Sep 29 22:41 favicon.ico
+drwxr-xr-x.  8  4.0K Sep 29 23:48 .git
+-rw-r--r--.  1   418 Sep 29 22:41 index.php
+-rw-r--r--.  1   20K Sep 29 22:41 license.txt
+-rw-r--r--.  1  7.3K Sep 29 22:41 readme.html
+</code></pre>
+</div>
+
+<p>Chúng ta đã có được thứ mà deploy ngây thơ không muốn chúng ta có.</p>
+
+<p>Wow, anh push chị pull điên cuồng tới 9 tháng 10 ngày mới ra được thành quả mà ta download có 5p là có…</p>
+
+<p><strong>Anh ngây chị thơ bèn tắt directory-listing trên webserver của mình</strong></p>
+
+<p>Thế là xong, tụi bây đừng hòng wget, curl gì nữa nhé…</p>
+
+<p>Ok, không sao, không có listing thì mình mò từ từ vậy.</p>
+
+<p><strong>Đây là cấu trúc cơ bản của .git</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>‣ tree .git            
+.git
+├── COMMIT_EDITMSG
+├── config
+├── description
+├── HEAD
+├── index
+├── info
+│   ├── exclude
+│   └── refs
+├── logs
+│   ├── HEAD
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── remotes
+│           └── origin
+├── objects
+├── packed-refs
+└── refs
+    ├── heads
+    │   └── master
+    ├── remotes
+    │   └── origin
+    │       └── HEAD
+    └── stash
+
+11 directories, 13 files
+</code></pre>
+</div>
+<p>Còn ý nghĩa của từng thứ có trong .git là gì thì các anh em có thể tìm trên Google có rất nhiều. Đầu tiên là mình sẽ phải download các thành phần kể trên về một thư mục .git đã. Sau đó sẽ tính tiếp.</p>
+
+<p>Các file gồm có:</p>
+
+<ul>
+  <li>HEAD</li>
+  <li>objects/info/packs</li>
+  <li>description</li>
+  <li>config</li>
+  <li>COMMIT_EDITMSG</li>
+  <li>index</li>
+  <li>packed-refs</li>
+  <li>refs/heads/master</li>
+  <li>refs/remotes/origin/HEAD</li>
+  <li>refs/stash</li>
+  <li>logs/HEAD</li>
+  <li>logs/refs/heads/master</li>
+  <li>logs/refs/remotes/origin/HEAD</li>
+  <li>info/refs</li>
+  <li>info/exclude</li>
+</ul>
+
+<p><strong>Trong một repo git, có 3 loại object</strong></p>
+
+<ul>
+  <li>Blob - Dữ liệu ta cần (vd. sourcecode)</li>
+  <li>Tree - Nhóm các blob lại với nhau</li>
+  <li>Commit - Trạng thái của tree với các meta information (vd. ai commit/commit hồi nào/message)</li>
+</ul>
+
+<p>Các objects này nằm tại thư mục objects, theo cấu trúc <code class="highlighter-rouge">.git/objects/[2-bytes-đầu]/[38-bytes-sau]</code> trong đó <code class="highlighter-rouge">[2-bytes-đầu][38-bytes-sau]</code> là SHA1 của object.</p>
+
+<p>Như vậy ta download đuợc mấy phần cơ bản. Các objects này phải xài tool thôi. Mà brute-force SHA1 40 bytes có lẽ không phải là một ý kiến hay cho lắm, tốn thời gian mà tốn điện nữa…</p>
+
+<hr />
+<h3 id="cách-thứ-2">Cách thứ 2</h3>
+
+<p>Thử <code class="highlighter-rouge">cat .git/refs/heads/master</code> xem sao.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat .git/refs/heads/master
+6916ae52c0b20b04569c262275d27422fc4fcd34
+</code></pre>
+</div>
+
+<p>Okie, nôi dung chỉ có 1 đoạn SHA-1 thôi. Tưởng tượng object này nằm tại <code class="highlighter-rouge">.git/objects/69/16ae52c0b20b04569c262275d27422fc4fcd34</code></p>
+
+<p>Download nó về và…</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git cat-file -t 6916ae52c0b20b04569c262275d27422fc4fcd34
+commit
+</code></pre>
+</div>
+
+<p>Đây đúng là một object commit. Thử tìm thêm thông tin về nó xem sao.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; git cat-file -p 6916ae52c0b20b04569c262275d27422fc4fcd34
+tree fa3887a0b798346c122afdd7c5ecc605bf3c18c0
+parent 9264d57c621f66208d689ef653ce8a62c3bccfae
+author Nguyen Van Ngay &lt;ngay@nguyen.vn&gt; 1429391394 +0700
+committer Nguyen Van Ngay &lt;ngay@nguyen.vn&gt; 1429391394 +0700
+
+Anh yeu em Thơ..
+</code></pre>
+</div>
+
+<p>Có nhiều thông tin hơn rồi đây… download thử object tree đó về và cat-file nó thử xem sao.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git cat-file -p fa3887a0b798346c122afdd7c5ecc605bf3c18c0
+040000 tree 532fc6055e09e0a2d5602f4b84c0dbadce1b5f3e        Dumper
+040000 tree 077ce769dedcf19d0f063246256e8ae0394fd8df        Extractor
+040000 tree d6e1bd4677a256e760cce5ddaa7db7ea6f9a8900        Finder
+100644 blob 9670cf17dfeec351c395493058044b9f9dadbe2a        README.md
+</code></pre>
+</div>
+
+<p>Ok, commit này gồm 3 tree và 1 cái blob readme</p>
+
+<p>Download cái blob về xem sao.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git cat-file -p 9670cf17dfeec351c395493058044b9f9dadbe2a
+Git Tools
+=============
+[...]
+</code></pre>
+</div>
+
+<p>Nội dung của file hiện ra và ta đã lấy được file Readme. Như vậy, mỗi file (object) được băm ra (bằng một giải thuật nào đó) và nhét vào 1 địa điểm nào đó. Chuyện còn lại là làm 1 cái tool, dò hết các hash SHA1 nó thấy và đem về đúng chỗ nó phải ở.</p>
+
+<hr />
+
+<h3 id="cách-thứ-3">Cách thứ 3</h3>
+<p>Hoặc nhanh hơn chút nữa, nhờ vào việc git đóng gói các objects lại và để ở <code class="highlighter-rouge">.git/objects/pack/</code>. Nhưng file này tên gì, thử dò tới <code class="highlighter-rouge">.git/objects/info/packs</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cat .git/objects/info/packs
+P pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
+</code></pre>
+</div>
+
+<p>Download nó về  đúng chỗ của nó…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; /usr/bin/ls .git/objects/pack/
+pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.idx
+pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
+</code></pre>
+</div>
+<p>Extract nó ra, ta sẽ có được đầy đủ objects.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; git unpack-objects -r &lt; .git/objects/pack/pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
+Unpacking objects: 100% (15/15), done.
+</code></pre>
+</div>
+
+<p>Giờ đây anh ngây chị thơ đã chịu block access vào .git trên web của họ, hoặc xóa nó đi luôn cho rồi, nhưng sau đó anh chị cũng quăng luôn cái site nên giờ ae mình truy cập vào không được nữa.</p>
+
+<hr />
+
+<p>Như vậy các anh em có thể thấy được chỉ cần public .git thì nguy cơ bị mất source là không nhỏ. Công sức, tài sản mất đã đành, kẻ xấu còn có thể xem code của mình rồi chê mình code dở ẹt, … à quên, rồi tìm điểm yếu để tấn công. Hơn nữa, có khi mât db credentials vô tay kẻ xấu thì dữ liệu khách hàng, thẻ tín dụng… nói chung coi như là uy tín của cty đem bỏ sông bỏ bể. Cty sẽ đuổi tay deploy trước, sau đó cty phá sản, ta mất việc.</p>
+
+<p>Không chỉ git bị mà các VCS khác cũng có thể dính, thành thử chúng ta nên ẩn tuyệt đối mọi thứ của chúng đi khi deploy (mà trên prod env thì có VCM cũng chẳng để làm gì)</p>
+
+<p>Một số thứ hay ho như cách phòng chống, công cụ, thống kê lượng website dính lỗi trên top Alexa 1M, các anh em có thể xem tại bài gốc nhé.</p>
+
+
+</div>
+
+<div class="pagination">
+  
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2017-10-07 00:00:19 +0700">2017</time> Vinh VO. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+      </span>
+    </footer>
+  </body>
+</html>

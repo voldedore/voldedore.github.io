@@ -1,14 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-15T22:01:31+07:00</updated><id>http://localhost:4000/</id><title type="html">The-Vinh VO</title><subtitle>&lt;/&gt; by the guy above.
-</subtitle><entry><title type="html">This is the first post</title><link href="http://localhost:4000/2017/03/04/this-is-the-first-post.html" rel="alternate" type="text/html" title="This is the first post" /><published>2017-03-04T10:22:17+07:00</published><updated>2017-03-04T10:22:17+07:00</updated><id>http://localhost:4000/2017/03/04/this-is-the-first-post</id><content type="html" xml:base="http://localhost:4000/2017/03/04/this-is-the-first-post.html">&lt;p&gt;Hello world 2&lt;/p&gt;</content><author><name></name></author><summary type="html">Hello world 2</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2017/03/02/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-02T22:54:03+07:00</published><updated>2017-03-02T22:54:03+07:00</updated><id>http://localhost:4000/jekyll/update/2017/03/02/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/03/02/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-07T00:00:19+07:00</updated><id>http://localhost:4000/</id><title type="html">So you are in voldedore’s blog</title><author><name>Vinh VO</name><email>vinh.vo30@gmail.com</email></author><entry><title type="html">TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn</title><link href="http://localhost:4000/2017-09-28/do-not-host-your-git-folder.html" rel="alternate" type="text/html" title="TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn" /><published>2017-09-28T00:00:00+07:00</published><updated>2017-09-28T00:00:00+07:00</updated><id>http://localhost:4000/2017-09-28/do-not-host-your-git-folder</id><content type="html" xml:base="http://localhost:4000/2017-09-28/do-not-host-your-git-folder.html">&lt;p&gt;&lt;em&gt;Bài này đuợc dịch từ bài gốc ở  &lt;a href=&quot;https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/&quot;&gt;đây&lt;/a&gt;, có chỉnh sửa một số chỗ.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Hy vọng bài này sẽ giúp anh em chú ý hơn trong việc deploy các source code với VCM. Bởi vì thực tế là có không ít website đang dính lỗi này. (Google 5s là ra á mà). Ví dụ trang: http://deploy-ngay-tho.vn/ (tên nhân vật chính đã được thay đổi).&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;chuyện-bắt-đầu-từ-&quot;&gt;Chuyện bắt đầu từ …&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Sau một thời gian dài thức khuya code với nhau, quản lý code bằng git, commit push pull đủ thứ, anh Ngây và chị Thơ đã tìm hiểu và đến với nhau, sau đó publish trang &lt;em&gt;deploy ngây thơ&lt;/em&gt; lên mạng. Mọi chuyện sẽ chẳng có gì lớn lao cho tới một ngày, có người phát hiện ra là cặp đôi ngây thơ bật directory-listing trên nginx và không block access vào folder .git&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;Đầu tiên là vô tình một cách có chủ ý, truy cập &lt;a href=&quot;http://deploy-ngay-tho.vn/.git/&quot;&gt;http://deploy-ngay-tho.vn/.git/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pemm, nhờ directories listing mà anh em sẽ thấy&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/git-directorylisting.png&quot; alt=&quot;sfsdg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sau đây là một số cách để anh chị ngây thơ bị chôm source khi để không .git cho thiên hạ vào xem.&lt;/p&gt;
+
+&lt;h3 id=&quot;cách-thứ-nhứt-download-hết-những-gì-anh-em-có-thể-thấy-đuợc-trên-cái-listing-đó&quot;&gt;Cách thứ nhứt: Download hết những gì anh em có thể thấy đuợc trên cái listing đó.&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wget --mirror -I .git http://deploy-ngay-tho.vn/.git/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Sau khi download xong, nếu anh em xài một số shells như zsh… &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; vào đó sẽ thấy (&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;developer&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;…) tức branch name của git repo.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/deploy-ngay-tho.vn &amp;gt; master &amp;gt;
+‣ ll
+total 6K
+drwxr-xr-x.  6  4.0K Sep 29 23:12 .
+drwxr-xr-x.  7  4.0K Sep 29 22:16 ..
+drwxr-xr-x.  8  4.0K Sep 29 23:48 .git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thử &lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt;, ta sẽ có được các file bị thiếu (giống như deleted), vì ta mới leech được .git trong cái thư mục trống rỗng mà.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/deploy-ngay-tho.vn &amp;gt; master &amp;gt;
+‣ git status | head -n 10
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use &quot;git add/rm &amp;lt;file&amp;gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
+
+        deleted:       .buildpath
+        deleted:       .gitignore
+        deleted:       .htaccess
+        deleted:       .project
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thử revert lại bằng &lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout -- .&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/deploy-ngay-tho.vn &amp;gt; master &amp;gt;
+‣ ll
+total 216K
+drwxr-xr-x.  6   4.0K Sep 29 23:12 .
+drwxr-xr-x.  7   4.0K Sep 29 22:16 ..
+-rw-r--r--.  1  1.2K Sep 29 22:41 favicon.ico
+drwxr-xr-x.  8  4.0K Sep 29 23:48 .git
+-rw-r--r--.  1   418 Sep 29 22:41 index.php
+-rw-r--r--.  1   20K Sep 29 22:41 license.txt
+-rw-r--r--.  1  7.3K Sep 29 22:41 readme.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Chúng ta đã có được thứ mà deploy ngây thơ không muốn chúng ta có.&lt;/p&gt;
+
+&lt;p&gt;Wow, anh push chị pull điên cuồng tới 9 tháng 10 ngày mới ra được thành quả mà ta download có 5p là có…&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Anh ngây chị thơ bèn tắt directory-listing trên webserver của mình&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Thế là xong, tụi bây đừng hòng wget, curl gì nữa nhé…&lt;/p&gt;
+
+&lt;p&gt;Ok, không sao, không có listing thì mình mò từ từ vậy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Đây là cấu trúc cơ bản của .git&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;‣ tree .git            
+.git
+├── COMMIT_EDITMSG
+├── config
+├── description
+├── HEAD
+├── index
+├── info
+│   ├── exclude
+│   └── refs
+├── logs
+│   ├── HEAD
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── remotes
+│           └── origin
+├── objects
+├── packed-refs
+└── refs
+    ├── heads
+    │   └── master
+    ├── remotes
+    │   └── origin
+    │       └── HEAD
+    └── stash
+
+11 directories, 13 files
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Còn ý nghĩa của từng thứ có trong .git là gì thì các anh em có thể tìm trên Google có rất nhiều. Đầu tiên là mình sẽ phải download các thành phần kể trên về một thư mục .git đã. Sau đó sẽ tính tiếp.&lt;/p&gt;
+
+&lt;p&gt;Các file gồm có:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HEAD&lt;/li&gt;
+  &lt;li&gt;objects/info/packs&lt;/li&gt;
+  &lt;li&gt;description&lt;/li&gt;
+  &lt;li&gt;config&lt;/li&gt;
+  &lt;li&gt;COMMIT_EDITMSG&lt;/li&gt;
+  &lt;li&gt;index&lt;/li&gt;
+  &lt;li&gt;packed-refs&lt;/li&gt;
+  &lt;li&gt;refs/heads/master&lt;/li&gt;
+  &lt;li&gt;refs/remotes/origin/HEAD&lt;/li&gt;
+  &lt;li&gt;refs/stash&lt;/li&gt;
+  &lt;li&gt;logs/HEAD&lt;/li&gt;
+  &lt;li&gt;logs/refs/heads/master&lt;/li&gt;
+  &lt;li&gt;logs/refs/remotes/origin/HEAD&lt;/li&gt;
+  &lt;li&gt;info/refs&lt;/li&gt;
+  &lt;li&gt;info/exclude&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Trong một repo git, có 3 loại object&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Blob - Dữ liệu ta cần (vd. sourcecode)&lt;/li&gt;
+  &lt;li&gt;Tree - Nhóm các blob lại với nhau&lt;/li&gt;
+  &lt;li&gt;Commit - Trạng thái của tree với các meta information (vd. ai commit/commit hồi nào/message)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Các objects này nằm tại thư mục objects, theo cấu trúc &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/objects/[2-bytes-đầu]/[38-bytes-sau]&lt;/code&gt; trong đó &lt;code class=&quot;highlighter-rouge&quot;&gt;[2-bytes-đầu][38-bytes-sau]&lt;/code&gt; là SHA1 của object.&lt;/p&gt;
+
+&lt;p&gt;Như vậy ta download đuợc mấy phần cơ bản. Các objects này phải xài tool thôi. Mà brute-force SHA1 40 bytes có lẽ không phải là một ý kiến hay cho lắm, tốn thời gian mà tốn điện nữa…&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;cách-thứ-2&quot;&gt;Cách thứ 2&lt;/h3&gt;
+
+&lt;p&gt;Thử &lt;code class=&quot;highlighter-rouge&quot;&gt;cat .git/refs/heads/master&lt;/code&gt; xem sao.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat .git/refs/heads/master
+6916ae52c0b20b04569c262275d27422fc4fcd34
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Okie, nôi dung chỉ có 1 đoạn SHA-1 thôi. Tưởng tượng object này nằm tại &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/objects/69/16ae52c0b20b04569c262275d27422fc4fcd34&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Download nó về và…&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git cat-file -t 6916ae52c0b20b04569c262275d27422fc4fcd34
+commit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Đây đúng là một object commit. Thử tìm thêm thông tin về nó xem sao.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; git cat-file -p 6916ae52c0b20b04569c262275d27422fc4fcd34
+tree fa3887a0b798346c122afdd7c5ecc605bf3c18c0
+parent 9264d57c621f66208d689ef653ce8a62c3bccfae
+author Nguyen Van Ngay &amp;lt;ngay@nguyen.vn&amp;gt; 1429391394 +0700
+committer Nguyen Van Ngay &amp;lt;ngay@nguyen.vn&amp;gt; 1429391394 +0700
+
+Anh yeu em Thơ..
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Có nhiều thông tin hơn rồi đây… download thử object tree đó về và cat-file nó thử xem sao.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git cat-file -p fa3887a0b798346c122afdd7c5ecc605bf3c18c0
+040000 tree 532fc6055e09e0a2d5602f4b84c0dbadce1b5f3e        Dumper
+040000 tree 077ce769dedcf19d0f063246256e8ae0394fd8df        Extractor
+040000 tree d6e1bd4677a256e760cce5ddaa7db7ea6f9a8900        Finder
+100644 blob 9670cf17dfeec351c395493058044b9f9dadbe2a        README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ok, commit này gồm 3 tree và 1 cái blob readme&lt;/p&gt;
+
+&lt;p&gt;Download cái blob về xem sao.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git cat-file -p 9670cf17dfeec351c395493058044b9f9dadbe2a
+Git Tools
+=============
+[...]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Nội dung của file hiện ra và ta đã lấy được file Readme. Như vậy, mỗi file (object) được băm ra (bằng một giải thuật nào đó) và nhét vào 1 địa điểm nào đó. Chuyện còn lại là làm 1 cái tool, dò hết các hash SHA1 nó thấy và đem về đúng chỗ nó phải ở.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;cách-thứ-3&quot;&gt;Cách thứ 3&lt;/h3&gt;
+&lt;p&gt;Hoặc nhanh hơn chút nữa, nhờ vào việc git đóng gói các objects lại và để ở &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/objects/pack/&lt;/code&gt;. Nhưng file này tên gì, thử dò tới &lt;code class=&quot;highlighter-rouge&quot;&gt;.git/objects/info/packs&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cat .git/objects/info/packs
+P pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Download nó về  đúng chỗ của nó…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; /usr/bin/ls .git/objects/pack/
+pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.idx
+pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Extract nó ra, ta sẽ có được đầy đủ objects.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; git unpack-objects -r &amp;lt; .git/objects/pack/pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
+Unpacking objects: 100% (15/15), done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Giờ đây anh ngây chị thơ đã chịu block access vào .git trên web của họ, hoặc xóa nó đi luôn cho rồi, nhưng sau đó anh chị cũng quăng luôn cái site nên giờ ae mình truy cập vào không được nữa.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Như vậy các anh em có thể thấy được chỉ cần public .git thì nguy cơ bị mất source là không nhỏ. Công sức, tài sản mất đã đành, kẻ xấu còn có thể xem code của mình rồi chê mình code dở ẹt, … à quên, rồi tìm điểm yếu để tấn công. Hơn nữa, có khi mât db credentials vô tay kẻ xấu thì dữ liệu khách hàng, thẻ tín dụng… nói chung coi như là uy tín của cty đem bỏ sông bỏ bể. Cty sẽ đuổi tay deploy trước, sau đó cty phá sản, ta mất việc.&lt;/p&gt;
+
+&lt;p&gt;Không chỉ git bị mà các VCS khác cũng có thể dính, thành thử chúng ta nên ẩn tuyệt đối mọi thứ của chúng đi khi deploy (mà trên prod env thì có VCM cũng chẳng để làm gì)&lt;/p&gt;
+
+&lt;p&gt;Một số thứ hay ho như cách phòng chống, công cụ, thống kê lượng website dính lỗi trên top Alexa 1M, các anh em có thể xem tại bài gốc nhé.&lt;/p&gt;</content><author><name>Vinh VO</name></author><summary type="html">Bài này đuợc dịch từ bài gốc ở đây, có chỉnh sửa một số chỗ.</summary></entry></feed>
