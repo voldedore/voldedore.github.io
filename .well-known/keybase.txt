@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/voldedore
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://vothevinh.com
+  * I am voldedore (https://keybase.io/voldedore) on keybase.
+  * I have a public key with fingerprint 5681 9DB6 25CD A73D 2142  5A6A 8322 BDB2 6DAD E0F0
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012027154f0613fb97c4df2d5cf5946cb4caa470569ae3209c8c42f300e0724743be0a",
+      "fingerprint": "56819db625cda73d21425a6a8322bdb26dade0f0",
+      "host": "keybase.io",
+      "key_id": "8322bdb26dade0f0",
+      "kid": "010182de17f9a2b0e8186b7a42acee54a828fb36e233aba7c8f3d8a48df4606ddb970a",
+      "uid": "31a6cc78f92d844ff7925edc9774b719",
+      "username": "voldedore"
+    },
+    "service": {
+      "hostname": "vothevinh.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1583985837,
+  "expire_in": 157680000,
+  "prev": "a9b3e5e0783421b0c1990ca4c36ae44383ba63315e3d9291431e44003e3b1977",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUntMFEccPh4qnEKLoEGKyG1TU+wVdmf2ebFUjJRSsQ2CELTHZXZ39tgKd3C3
+vAUsVhQBFaXRUnIm14Q/bHyAtjXahNIooalIaCm2WkuFNCIPH4ippaV0j5T+1flj
+JvOb7/vm+34zR0MCDEa//NmU9F8jG71+394XDbnqZ7GVhOiUywlLJbEbLyw4X8Zu
+zbZblQkLQVKABBzF0ArJUlARBU6iZQXIjKQwAs1KIi0hRHMkwwoIQ0AKEi/RQIEk
+iUkO0BwNRUwiwkwoqsOOXYUu1aHpsgzLU4IssoCRZMRBGVA0YBCLeAiAKIuAlZGM
+SYXUiXlOt4+hmxORG8erTr2mb2wL9v4Hv+ibpHggY4pTBAREEvMUz4ocogGSMGZo
+xANeESGLAYRIRJzEK1DmEc3LCs2SrCzrSRd8Fy/IQQqxksTxigBknqYVhRMAg2VJ
+4Dha5CjBB3RjlwMVYB1d4tRbKDtdmKgyE3q5RJWwr7O+KP9BtDxcojry4iVngc4u
+dDk1p+TM14/yNK3QbfFRtfJCH7YUi7Z/VWyi6pD1TuqMEuxyq04HYaF0pKSpPlmK
+4aHA6xNnJnBZoerCNtWHYDiWJ/XhuweX6JJIECHexehvxEMaUCIpUYJASoiWIIsw
+TUMeioiFkGIwlAUgUDSk9DJJQgxFSk9N+IIVOZy6OKsbRXZd1K3aHUgr9sU21vvD
+QIOf0bB2tSmwpTTrcZ//+EuZSe+uX/x+S/x9f89gDH5+sXJp8Lm58CDLlqSMpmw5
+NiQsxjzfWvtF5K3+21eepDw8KeKDZ39RfmjL7Yrrevg0Ize2LHy5ub9j8PsKR/Ty
+mH3v2JLb48Qae+ZY26aeR2Cmc756+5ac6A/eBx8/sDZMea5vHVsKOzf23R5OCygJ
+WxkxzzTSzY+C3NU9cDI5KmnV6HUU1S78NOC5+nprcrvdO9J/9/54tXlHaEyC9/6N
+j2paLwacm2uYMVMr6pjoac8Vbdur4Lx3e0ZY35PUN0OJ9wIn67vH+Q/3PL2cudNj
+7OoeauKXqPasZ9fUobsdm383lbl+Gzx9K9Ybeiw14vj6iMi3BvzXxO5/dqQxLufE
+aNZK5s+M3k3J2RstL2TNevHVl/kzoetWHxpOG6K8n1unBksvBAX8EXHzG9uNzn1T
+BUuzGw8cHp84ORtoZVq0wYTOiJ21vTX3rhXvDRktXbMnNX1STHlW93fdG/a5twf2
+JzV31AwareXdSU1pK4YvPFHL7p049WXqX/XrEkZrpiujtf6DFk+LNLH1xZEQj2E8
+Z9TdNlEfHhyf2VrRS3NVCWu/rjCljE3eNCXuqIqxHi86PNaSy5xtpuMuno8y1YL0
+EfPMqWMmwRp2MG0qUQM/Tr8S3JvYsOvnI2DDd9OvTc3cWbPsjMH51WPljufSp+PJ
+2uVz8XzRqtZP8vPNR/G29r09DzqWbT6woeD0FlPsPw==
+=Peq3
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/voldedore
+
+==================================================================
+
