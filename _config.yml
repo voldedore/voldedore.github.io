@@ -1,0 +1,36 @@
+# Permalinks
+permalink: /:year-:month-:day/:title.html
+
+# Setup
+title: So you are in voldedore's blog
+paginate: 5
+baseurl: ""
+url: "https://vothevinh.com"
+meta_description: Blog cá nhân của Võ Thế Vinh
+meta_keywords: voldedore, blog, vo the vinh, võ thế vinh
+
+# Assets
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# About
+author:
+  name: Vinh VO
+  url: https://vothevinh.com
+  email: vinh.vo30@gmail.com
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Custom vars
+version: 3.4.1
+github:
+  repo: https://github.com/chesterhow/tale
+
+# Compile setting
+source: .
+destination: /home/admin/Projects/persWeb

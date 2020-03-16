@@ -1,0 +1,33 @@
+<head>
+  {% if page.meta_keywords != null %}
+  <meta name="keywords" content="{{ page.meta_keywords }}, {{ site.meta_keywords }}"/>
+  {% endif %}
+
+  {% if page.meta_description != null %}
+  <meta name="description" content="{{ page.meta_description }} {{ site.meta_description }}"/>
+  {% endif %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="agB8ej75M5JXIvhB7zY6XRbdR_rnH-CbLOkf6hMseww" />
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107686232-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107686232-1');
+  </script>
+
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Maitree|Montserrat" rel="stylesheet">
+</head>

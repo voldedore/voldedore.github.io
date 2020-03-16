@@ -1,104 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Home
+---
 
-  <head>
-  
-
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="agB8ej75M5JXIvhB7zY6XRbdR_rnH-CbLOkf6hMseww" />
-  <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107686232-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-107686232-1');
-  </script>
-
-  <title>
-    
-      So you are in voldedore's blog
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Lobster|Maitree|Montserrat" rel="stylesheet">
-</head>
-
-
-  <body>
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="/">
-          <h2 class="nav-title">So you are in voldedore's blog</h2>
-        </a>
-        <ul>
-          <li><a href="/">Posts</a></li>
-        </ul>
-    </div>
-  </nav>
-
-    <main>
-      <div class="catalogue">
-  
-    <a href="/2017-09-28/do-not-host-your-git-folder.html" class="catalogue-item">
+<div class="catalogue">
+  {% for post in paginator.posts %}
+    <a href="{{ post.url }}" class="catalogue-item">
       <div>
-        <time datetime="2017-09-28 00:00:00 +0700" class="catalogue-time">September 28, 2017</time>
-        <h1 class="catalogue-title">TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn</h1>
+        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+        <h1 class="catalogue-title">{{ post.title }}</h1>
         <div class="catalogue-line"></div>
 
         <p>
-          Bài này đuợc dịch từ bài gốc ở đây, có chỉnh sửa một số chỗ. Hy vọng bài này sẽ giúp anh em chú ý hơn trong việc deploy...
+          {{ post.content | truncatewords: 30 | strip_html }}
         </p>
 
       </div>
     </a>
-  
-    <a href="/2015-06-14/why-in-earth-clocks-have-iiii-number-instead-of-iv.html" class="catalogue-item">
-      <div>
-        <time datetime="2015-06-14 00:00:00 +0700" class="catalogue-time">June 14, 2015</time>
-        <h1 class="catalogue-title">Tại sao trên mặt đồng hồ, số bốn la mã được ghi là « IIII » thay vì « IV » ?</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          Cách đây vài năm, mình có thắc mắc câu hỏi này vì một lần tình cờ giơ tay lên xem giờ thấy số 4 bị viết sai thành « IIII...
-        </p>
-
-      </div>
-    </a>
-  
-    <a href="/2014-09-17/story-of-submarine-cables-and-laos.html" class="catalogue-item">
-      <div>
-        <time datetime="2014-09-17 00:00:00 +0700" class="catalogue-time">September 17, 2014</time>
-        <h1 class="catalogue-title">Chuyện cáp quang và nước Lào</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          (Bài này viết nháp từ hồi đứt cable lần 1, tới giờ ai ngờ đứt lần 2 sẵn publish luôn) Thỉnh thoảng báo đài trong nước (và cư dân mạng)...
-        </p>
-
-      </div>
-    </a>
-  
+  {% endfor %}
 </div>
 
 <div class="pagination">
-  
-  
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="right arrow">&#8594;</a>
+  {% endif %}
 
-  <span>1</span>
+  <span>{{ paginator.page }}</span>
 </div>
-
-    </main>
-
-    <footer>
-      <span>
-        &copy; 2014 - 2017 Vinh VO. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
-      </span>
-    </footer>
-  </body>
-</html>
