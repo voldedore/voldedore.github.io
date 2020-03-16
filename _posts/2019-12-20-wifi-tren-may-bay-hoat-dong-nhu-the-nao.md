@@ -6,8 +6,6 @@ meta_keywords: "basic knowledge, how things work, internet, plane"
 meta_description: "Chúng ta hãy cùng tìm hiểu về việc lướt web ở độ cao 10 000 mét như thế nào?"
 ---
 
-# Chúng ta lướt web ở độ cao 10 000 mét như thế nào?
-
 _Trong một chuyến bay, dù dài hay ngắn, thì qua quan sát hay khoa học hơn là theo thống kê đó mấy bạn, các hành khách đều chọn cho mình một cách để giết thời gian (các cách sau đây không xếp theo thứ tự phổ biến), đó là: ngủ, ăn, rồi ngủ, rồi đọc sách, nghe nhạc, xem phim, nhìn mây đoán thú, nhìn tiếp viên... Và phần đông người sau khi nhìn tiếp viên mà chán rồi họ sẽ lôi điện thoại ra để lướt nét._
 
 Lướt net ở độ cao 10 km thực tế là điều mà ai trong chúng ta cũng đều mong đợi khi bay (cái này là du lịch nhé, chứ không có liên quan tới 420). Theo nghiên cứu Du khách Toàn cầu 2018 (Nguyên văn: [2018 Global Traveler](https://www.gogoair.com/learning-center/2018-global-traveler-research-study/)), 94% du khách trên quả địa cầu này cảm thấy rằng trên chuyến bay của họ nếu có hỗ trợ wifi sẽ tăng trải nghiệm bay của họ và 30% trong số đó rõ ràng là xem trọng đến dịch vụ này khi đặt vé máy bay. Đến cái quán trà chanh còn có wifi mà chả nhẽ chiếc máy bay to thế kia lại không có ư?!
