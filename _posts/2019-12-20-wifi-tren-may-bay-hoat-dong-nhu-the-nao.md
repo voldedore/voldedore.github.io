@@ -4,6 +4,8 @@ title: "Chúng ta lướt web ở độ cao 10 000 mét như thế nào?"
 author: "Vinh VO"
 meta_keywords: "basic knowledge, how things work, internet, plane"
 meta_description: "Chúng ta hãy cùng tìm hiểu về việc lướt web ở độ cao 10 000 mét như thế nào?"
+comments: true
+disqus_id: DISQUS_WIFI_ON_PLANE
 ---
 
 _Trong một chuyến bay, dù dài hay ngắn, thì qua quan sát hay khoa học hơn là theo thống kê đó mấy bạn, các hành khách đều chọn cho mình một cách để giết thời gian (các cách sau đây không xếp theo thứ tự phổ biến), đó là: ngủ, ăn, rồi ngủ, rồi đọc sách, nghe nhạc, xem phim, nhìn mây đoán thú, nhìn tiếp viên... Và phần đông người sau khi nhìn tiếp viên mà chán rồi họ sẽ lôi điện thoại ra để lướt nét._

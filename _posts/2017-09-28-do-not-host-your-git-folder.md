@@ -1,19 +1,22 @@
 ---
 layout: post
-title:  "TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn"
+title: "TIL: Đừng public .git, hoặc đây là 3 cách download cả website của bạn"
 author: "Vinh VO"
 meta_keywords: "git, web security, bảo mật, brute force, version control system, version control manager, directory-listing, vcs, vcm"
 meta_description: "Chúng ta hãy cùng tìm hiểu các lý do tại sao bạn không nên để lộ .git trên server web nhé."
+comments: true
+disqus_id: DISQUS_GIT_FOLDER_PUBLIC
 ---
 
-*Bài này đuợc dịch từ bài gốc ở  [đây](https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/), có chỉnh sửa một số chỗ.*
+_Bài này đuợc dịch từ bài gốc ở [đây](https://en.internetwache.org/dont-publicly-expose-git-or-how-we-downloaded-your-websites-sourcecode-an-analysis-of-alexas-1m-28-07-2015/), có chỉnh sửa một số chỗ._
 
 Hy vọng bài này sẽ giúp anh em chú ý hơn trong việc deploy các source code với VCM. Bởi vì thực tế là có không ít website đang dính lỗi này. (Google 5s là ra á mà). Ví dụ trang: http://deploy-ngay-tho.vn/ (tên nhân vật chính đã được thay đổi).
 
-----
+---
+
 ### Chuyện bắt đầu từ ...
 
-Sau một thời gian dài thức khuya code với nhau, quản lý code bằng git, commit push pull đủ thứ, anh Ngây và chị Thơ đã tìm hiểu và đến với nhau, sau đó publish trang *deploy ngây thơ* lên mạng. Mọi chuyện sẽ chẳng có gì lớn lao cho tới một ngày, có người phát hiện ra là cặp đôi ngây thơ bật directory-listing trên nginx và không block access vào folder .git
+Sau một thời gian dài thức khuya code với nhau, quản lý code bằng git, commit push pull đủ thứ, anh Ngây và chị Thơ đã tìm hiểu và đến với nhau, sau đó publish trang _deploy ngây thơ_ lên mạng. Mọi chuyện sẽ chẳng có gì lớn lao cho tới một ngày, có người phát hiện ra là cặp đôi ngây thơ bật directory-listing trên nginx và không block access vào folder .git
 
 Đầu tiên là vô tình một cách có chủ ý, truy cập [http://deploy-ngay-tho.vn/.git/](http://deploy-ngay-tho.vn/.git/)
 
@@ -83,7 +86,7 @@ Ok, không sao, không có listing thì mình mò từ từ vậy.
 **Đây là cấu trúc cơ bản của .git**
 
 ```
-‣ tree .git            
+‣ tree .git
 .git
 ├── COMMIT_EDITMSG
 ├── config
@@ -112,37 +115,39 @@ Ok, không sao, không có listing thì mình mò từ từ vậy.
 
 11 directories, 13 files
 ```
+
 Còn ý nghĩa của từng thứ có trong .git là gì thì các anh em có thể tìm trên Google có rất nhiều. Đầu tiên là mình sẽ phải download các thành phần kể trên về một thư mục .git đã. Sau đó sẽ tính tiếp.
 
 Các file gồm có:
 
-* HEAD
-* objects/info/packs
-* description
-* config
-* COMMIT_EDITMSG
-* index
-* packed-refs
-* refs/heads/master
-* refs/remotes/origin/HEAD
-* refs/stash
-* logs/HEAD
-* logs/refs/heads/master
-* logs/refs/remotes/origin/HEAD
-* info/refs
-* info/exclude
+- HEAD
+- objects/info/packs
+- description
+- config
+- COMMIT_EDITMSG
+- index
+- packed-refs
+- refs/heads/master
+- refs/remotes/origin/HEAD
+- refs/stash
+- logs/HEAD
+- logs/refs/heads/master
+- logs/refs/remotes/origin/HEAD
+- info/refs
+- info/exclude
 
 **Trong một repo git, có 3 loại object**
 
-* Blob - Dữ liệu ta cần (vd. sourcecode)
-* Tree - Nhóm các blob lại với nhau
-* Commit - Trạng thái của tree với các meta information (vd. ai commit/commit hồi nào/message)
+- Blob - Dữ liệu ta cần (vd. sourcecode)
+- Tree - Nhóm các blob lại với nhau
+- Commit - Trạng thái của tree với các meta information (vd. ai commit/commit hồi nào/message)
 
 Các objects này nằm tại thư mục objects, theo cấu trúc `.git/objects/[2-bytes-đầu]/[38-bytes-sau]` trong đó `[2-bytes-đầu][38-bytes-sau]` là SHA1 của object.
 
 Như vậy ta download đuợc mấy phần cơ bản. Các objects này phải xài tool thôi. Mà brute-force SHA1 40 bytes có lẽ không phải là một ý kiến hay cho lắm, tốn thời gian mà tốn điện nữa...
 
 ---
+
 ### Cách thứ 2
 
 Thử `cat .git/refs/heads/master` xem sao.
@@ -155,12 +160,14 @@ cat .git/refs/heads/master
 Okie, nôi dung chỉ có 1 đoạn SHA-1 thôi. Tưởng tượng object này nằm tại `.git/objects/69/16ae52c0b20b04569c262275d27422fc4fcd34`
 
 Download nó về và...
+
 ```
 git cat-file -t 6916ae52c0b20b04569c262275d27422fc4fcd34
 commit
 ```
 
 Đây đúng là một object commit. Thử tìm thêm thông tin về nó xem sao.
+
 ```
 > git cat-file -p 6916ae52c0b20b04569c262275d27422fc4fcd34
 tree fa3887a0b798346c122afdd7c5ecc605bf3c18c0
@@ -184,6 +191,7 @@ git cat-file -p fa3887a0b798346c122afdd7c5ecc605bf3c18c0
 Ok, commit này gồm 3 tree và 1 cái blob readme
 
 Download cái blob về xem sao.
+
 ```
 git cat-file -p 9670cf17dfeec351c395493058044b9f9dadbe2a
 Git Tools
@@ -196,19 +204,22 @@ Nội dung của file hiện ra và ta đã lấy được file Readme. Như v�
 ---
 
 ### Cách thứ 3
+
 Hoặc nhanh hơn chút nữa, nhờ vào việc git đóng gói các objects lại và để ở `.git/objects/pack/`. Nhưng file này tên gì, thử dò tới `.git/objects/info/packs`
+
 ```
 cat .git/objects/info/packs
 P pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
 ```
 
-Download nó về  đúng chỗ của nó...
+Download nó về đúng chỗ của nó...
 
 ```
 > /usr/bin/ls .git/objects/pack/
 pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.idx
 pack-e38660e6be24bb79d8d929ddea3d194e0dd3cd13.pack
 ```
+
 Extract nó ra, ta sẽ có được đầy đủ objects.
 
 ```
