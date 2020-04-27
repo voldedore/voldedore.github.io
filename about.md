@@ -14,8 +14,8 @@ I maintain this blog mainly for load sharing with my brain, or to not forget som
 
 You can ping me at:
 
-- [LinkedIn](3)
-- [https://keybase.io/voldedore](2)
+- [LinkedIn][3]
+- [https://keybase.io/voldedore][2]
 
 ![1]({{ '/assets/images/lincoln-quote.webp' | relative_url }})
 
