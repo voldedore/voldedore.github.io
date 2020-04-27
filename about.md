@@ -14,7 +14,9 @@ I maintain this blog mainly for load sharing with my brain, or to not forget som
 
 More:
 
-- https://keybase.io/voldedore
+- [https://keybase.io/voldedore](2)
 - TBD an vCard.
 
 ![1]({{ '/assets/images/lincoln-quote.webp' | relative_url }})
+
+[2]: https://keybase.io/voldedore
