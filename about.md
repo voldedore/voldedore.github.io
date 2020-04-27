@@ -12,11 +12,12 @@ People around like to call me a "geek" which I don't like being called because o
 
 I maintain this blog mainly for load sharing with my brain, or to not forget something I've done (hobbies or professionally) since we are all spontaneously struggling with this hasty non-stop world.
 
-More:
+You can ping me at:
 
+- [LinkedIn](3)
 - [https://keybase.io/voldedore](2)
-- TBD an vCard.
 
 ![1]({{ '/assets/images/lincoln-quote.webp' | relative_url }})
 
 [2]: https://keybase.io/voldedore
+[3]: https://www.linkedin.com/in/vinh-vo/
