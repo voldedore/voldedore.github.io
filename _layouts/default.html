@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="{{ site.baseurl }}/">
-          <h2 class="nav-title">{{ site.title }}</h2>
-        </a>
-        <ul>
-          <li><a href="{{ site.baseurl }}/">Posts</a></li>
-        </ul>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="{{ site.baseurl }}/">
+        <h2 class="nav-title">{{ site.title }}</h2>
+      </a>
+      <ul>
+        <li><a href="{{ site.baseurl }}/">Posts</a></li>
+        <li><a href="{{ '/about' | absolute_url }}">About</a></li>
+      </ul>
     </div>
   </nav>
 
-    <main>
-      {{ content }}
-    </main>
+  <main>
+    {{ content }}
+  </main>
 
-    <footer>
-      <span>
-        &copy; 2014 - {{ site.time | date: '%Y' }} {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
-      </span>
-    </footer>
-  </body>
+  <footer>
+    <span>
+      &copy; 2014 - {{ site.time | date: '%Y' }} {{ site.author.name }}. Made with Jekyll using the <a
+        href="https://github.com/chesterhow/tale/">Tale</a> theme.
+    </span>
+  </footer>
+</body>
+
 </html>

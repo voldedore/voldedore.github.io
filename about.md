@@ -1,10 +1,10 @@
 ---
 layout: default
 title: About
-sitemap: false
+sitemap: true
 ---
 
-My name is The-Vinh VO, administratively Võ Thế Vinh, sometimes known as voldedore/omo/vtvinh. 
+My name is The-Vinh VO, administratively Võ Thế Vinh, sometimes known as voldedore/omo/vtvinh.
 
 One of 'unknown' proponents of (both online and offline) privacy. I'm likewise interested in cybersecurity, cultures and discovery of how-things-work.
 
@@ -18,6 +18,8 @@ You can ping me at:
 - [https://keybase.io/voldedore][2]
 
 ![1]({{ '/assets/images/lincoln-quote.webp' | relative_url }})
+
+This site does not store cookies. However, it's powered by CloudFlare (and Disqus on some articles) which may store tracking cookies.
 
 [2]: https://keybase.io/voldedore
 [3]: https://www.linkedin.com/in/vinh-vo/
