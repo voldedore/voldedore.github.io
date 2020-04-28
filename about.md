@@ -19,7 +19,7 @@ You can ping me at:
 
 ![1]({{ '/assets/images/lincoln-quote.webp' | relative_url }})
 
-This site does not store cookies. However, it's powered by CloudFlare (and Disqus on some articles) which may store tracking cookies.
+This site does not use cookies. However, it's powered by CloudFlare, Google Fonts (and Disqus on some articles) which may store tracking cookies.
 
 [2]: https://keybase.io/voldedore
 [3]: https://www.linkedin.com/in/vinh-vo/
