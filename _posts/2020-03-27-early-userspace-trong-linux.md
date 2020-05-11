@@ -4,7 +4,6 @@ title: "Ngắn gọn về Early Userspace trong Arch Linux"
 author: "Vinh VO"
 meta_keywords: "linux, early userspace, arch linux, summary"
 meta_description: ""
-published: false
 ---
 
 ## Khởi động một hệ thống chạy Linux

@@ -14,6 +14,7 @@ I maintain this blog mainly for load sharing with my brain, or to not forget som
 
 You can ping me at:
 
+- vinh.vo30@gmail.com
 - [LinkedIn][3]
 - [https://keybase.io/voldedore][2]
 
