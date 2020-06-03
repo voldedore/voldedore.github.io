@@ -23,14 +23,12 @@ author:
 # Build settings
 markdown: kramdown
 gems:
-  - jekyll-paginate
   - jekyll-sitemap
+plugins:
+  - jekyll-paginate
 
 # Custom vars
 version: 3.4.1
 github:
   repo: https://github.com/chesterhow/tale
 
-# Compile setting
-source: .
-destination: /home/admin/Projects/persWeb
