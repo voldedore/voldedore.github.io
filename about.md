@@ -14,7 +14,8 @@ I maintain this blog mainly for load sharing with my brain, or to not forget som
 
 You can ping me at:
 
-- vinh.vo30@gmail.com
+- [@VoTheVinh][4]
+- [vinh.vo30@gmail.com][5]
 - [LinkedIn][3]
 - [https://keybase.io/voldedore][2]
 
@@ -24,3 +25,6 @@ This site does not use cookies. However, it's powered by CloudFlare, Google Font
 
 [2]: https://keybase.io/voldedore
 [3]: https://www.linkedin.com/in/vinh-vo/
+[4]: https://twitter.com/VoTheVinh
+[5]: mailto:vinh.vo30@gmail.com
+
