@@ -12,10 +12,16 @@
       <ul>
         <li><a href="{{ site.baseurl }}/">Posts</a></li>
         <li><a href="{{ '/about' | absolute_url }}">About</a></li>
+        <li>
+          <a href="#">
+            <span id="light-switch">
+              &nbsp;
+            </span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
-
   <main>
     {{ content }}
   </main>
@@ -26,6 +32,7 @@
         href="https://github.com/chesterhow/tale/">Tale</a> theme.
     </span>
   </footer>
+  <script src="{{ '/assets/core.js' | absolute_url }}"></script>
 </body>
 
 </html>
