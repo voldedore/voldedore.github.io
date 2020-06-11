@@ -58,7 +58,7 @@ Create a new Proxy profile. **Proxy profiles will tunnel all your traffic via th
 
 Let's name it, says Onion. (Optional: Change its colour to purple). Since Tor is not an http proxy, so you have to select SOCK5. Let others as default.
 
-![New onion profile]({{ '/assets/images/deep_web/new_onion_profile.png' | relative_url }})
+![New onion profile]({{ '/assets/images/deep_web/new_onion_profile.png' | absolute_url }})
 
 Next, create a new Switch profile. Switch profiles are the art of our effort. **It doesn't route all your traffic via the proxy, but only some URLs by matching them as wildcard or RegExp**. So the rest of your website accessing still go directly. For some reasons, this scenario is realistic: Tor proxy is slow and some websites block tor traffic.
 
@@ -67,7 +67,7 @@ This time, name it Onion_switch. Let's add two conditions.
 0. URL wildcard for https://check.torproject.org/
 0. Host wildcard for any website that ends with `.onion`.
 
-![New switch profile]({{ '/assets/images/deep_web/new_switch_profile.png' | relative_url }})
+![New switch profile]({{ '/assets/images/deep_web/new_switch_profile.png' | absolute_url }})
 
 Everything is theorically nicely done. Go back to Firefox, and click on the extension icon, then choose the profile `Onion_switch`. The icon will change its colour. 
 
