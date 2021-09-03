@@ -19,13 +19,15 @@ Tôi cũng không theo trào lưu Paperless. Dù cho tôi đang thực hiện (h
 
 Đối với một số người, máy đọc sách là một cứu cánh vì 1) họ có quá nhiều sách và họ ưa di chuyển; 2) họ có vấn đề về mắt nên buộc phải dùng máy đọc sách thay cho các thiết bị dùng đèn nền LCD khác; 3) họ bị nghiện. Những người nghiện sẽ tìm cách làm mọi thứ trên những thiết bị của họ. Tôi viết bài này để giúp cho cả 3 loại người kể trên, vì tôi thuộc kiểu 1 và 2. Thường thì những người nghiện rất khó đồng ý về tình trạng nghiện ngập của bản thân họ.
 
-Trở về với `calibre`. Bất cứ ai dùng máy đọc sách cũng có thể đã nghe và từng dùng qua phần mềm này. Trữ sách, gửi sách vào máy, chỉnh sửa sách, thêm bìa, thêm wordwise cho các máy hệ amazon (hay còn gọi là người chơi hệ ngồi gốc cây), v.v... Có một thứ mà ít ai dùng tới đó là tính năng Fetch news.
+Vì vậy, nhu cầu đọc báo trên Kindle là có thật. Thực tế có rất nhiều tạp chí được bán theo dạng tuần san hoặc nguyệt san trên Amazon như National Geographic, The Economist, New Scientist... Tiếc là những dịch vụ này còn quá xa xỉ với người dùng Việt Nam. Nhưng người Việt họ luôn có những giải pháp rất hay, vì họ là một dân tộc thông minh, kiên cường, hoặc vì họ đã quen sống trong tình cảnh bất lợi cũng khá lâu rồi.
+
+Trở về với `calibre`. Bất cứ ai dùng máy đọc sách cũng có thể đã nghe và từng dùng qua phần mềm này. Trữ sách, gửi sách vào máy, chỉnh sửa sách, thêm bìa, thêm wordwise cho các máy hệ Amazon (hay còn gọi là người chơi hệ ngồi gốc cây), v.v... Có một thứ mà ít ai dùng tới đó là tính năng Fetch news, tính năng để gởi tin tức vào máy thông qua server của Amazon.
 
 [Insert hình here]
 
 Tính năng này nó thực hiện các chuyện sau:
 
-1. Dùng các recipe để fetch những trang tin có RSS feed, xào nấu lại thành file mobi chứa tin tức theo đúng mẫu và chuẩn của amazon (để hiển thị được trên thiết bị của người dùng hệ ngồi gốc cây).
+1. Dùng các recipe để fetch những trang tin có RSS feed, xào nấu lại thành file mobi chứa tin tức theo đúng mẫu và chuẩn của Amazon (để hiển thị được trên thiết bị của người dùng hệ ngồi gốc cây).
 2. Từ các file mobi này, dùng config SMTP để gởi từ mailbox được phép gởi sách vào Kindle Cloud (from).
 3. Gởi vào email được thiết lập sẵn (email nhận sách ở Kindle Cloud hoặc email được cung cấp tương ứng với từng thiết bị) (to).
 4. Lặp lại các bước trên theo một lịch trình được thiết lập sẵn.
