@@ -3,10 +3,10 @@ layout: post
 title: "Tự động gửi báo hằng ngày vào Kindle với calibre server"
 author: "Vinh VO"
 meta_keywords: "news, guardian, le monde, kindle, calibre, server, calibre server, automatically, periodically, voyage, báo, tin tức, tự động gửi, cập nhật"
-meta_description: ""
+meta_description: "nhu cầu đọc báo trên Kindle là có thật. Thực tế có rất nhiều tạp chí được bán theo dạng tuần san hoặc nguyệt san trên Amazon như National Geographic, The Economist, New Scientist..."
 comments: true
 disqus_id: CALIBRE_SERVER_VI
-published: false
+published: true
 ---
 
 /**: The english version of this article will be available in the next few days. Or at least I hoped so.
@@ -23,7 +23,7 @@ Vì vậy, nhu cầu đọc báo trên Kindle là có thật. Thực tế có r�
 
 Trở về với `calibre`. Bất cứ ai dùng máy đọc sách cũng có thể đã nghe và từng dùng qua phần mềm này. Trữ sách, gửi sách vào máy, chỉnh sửa sách, thêm bìa, thêm wordwise cho các máy hệ Amazon (hay còn gọi là người chơi hệ ngồi gốc cây), v.v... Có một thứ mà ít ai dùng tới đó là tính năng Fetch news, tính năng để gởi tin tức vào máy thông qua server của Amazon.
 
-[Insert hình here]
+![Ảnh chụp màn hình Calibre trên mac]({{ '/assets/images/calibre-server/3.jpg' | relative_url }})
 
 Tính năng này nó thực hiện các chuyện sau:
 
@@ -34,7 +34,7 @@ Tính năng này nó thực hiện các chuyện sau:
 
 Thử gởi báo Le Monde vào. Nói chung là mọi thứ diễn ra đúng như cách nó được lập trình.
 
-[Chèn hình ở đây]
+![Kindle Voyage hiển thị bài báo của Le Monde ngày 1/9]({{ '/assets/images/calibre-server/1.jpg' | relative_url }})
 
 Nhưng điểm yếu của calibre ở đây là: để nhận được tin tức mỗi ngày, ví dụ vào buổi sáng 6 giờ thì chúng ta phải thức dậy trước đó và mở calibre lên để nó thực hiện việc gởi tin tức. Hoặc phải treo máy tính suốt, để vào đúng thời điểm được thiết lập, nó có thể gởi mail một cách tự động được. Nhưng đâu phải ai cũng có máy tính để treo suốt ngày, hoặc đâu phải máy tính nào treo suốt ngày cũng chạy được calibre. Hoặc là có.
 
@@ -46,6 +46,10 @@ Nửa tiếng đồng hồ thử một vài lần gởi, cuối cùng tôi cũng
 $ python2 process-recipe.py lemonde
 Sending lemonde.mobi over email
 ```
+
+Kết quả 
+
+![Ảnh chụp màn hình hiển thị bài báo của Le Monde ngày 3/9]({{ '/assets/images/calibre-server/2.jpg' | relative_url }})
 
 Những việc còn lại chỉ là tweak lại cái tool này cho mượt hơn chút xíu thôi. Tác giả có lẽ đã không còn maintain nó nữa rồi. Hy vọng ông không có cùng một ý tưởng như tôi, hoặc nếu có cũng hy vọng ông không gặp cùng vấn đề để ý tưởng đó chết đi một cách sớm hơn ông tưởng.
 
